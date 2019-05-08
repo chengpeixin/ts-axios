@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Base example</title>
+</head>
+<style>
+  #requestContainer {
+    width: 50%;
+    height: 300px;
+  }
+
+  #send {
+    width: 100px;
+    height: 100px;
+  }
+
+  #requestType {
+    width: 200px;
+  }
+</style>
+
+<body>
+  <textarea id="requestContainer"></textarea>
+  <div>
+    <select id='requestType'
+      name="requestType">
+      <option value="post">post</option>
+      <option value="get">get</option>
+    </select>
+    <Button id="send">发送</Button>
+  </div>
+  <script src="/__build__/base.js"></script>
+</body>
+
+</html>
