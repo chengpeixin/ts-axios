@@ -7,7 +7,7 @@ export type Method =
   | 'Head'
   | 'options'
   | 'Options'
-  | 'psot'
+  | 'post'
   | 'Post'
   | 'put'
   | 'Put'
@@ -18,4 +18,5 @@ export interface AxiosRequestConfig {
   method?: Method
   data?: any
   params?: any
+  headers?: any
 }
