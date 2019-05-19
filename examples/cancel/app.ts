@@ -1,11 +1,11 @@
-import axios, { Canceler } from '../../src/index'
+import axios, { Canceler } from '../../src/axios'
 
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()
 
 axios.get('/cancel/get', {
   cancelToken: source.token
-}).catch(function(e) {
+}).catch(function (e) {
   if (axios.isCancel(e)) {
     console.log('Request canceled', e.message)
   }
@@ -14,7 +14,7 @@ axios.get('/cancel/get', {
 setTimeout(() => {
   source.cancel('Operation canceled by the user.')
 
-  axios.post('/cancel/post', { a: 1 }, { cancelToken: source.token }).catch(function(e) {
+  axios.post('/cancel/post', { a: 1 }, { cancelToken: source.token }).catch(function (e) {
     if (axios.isCancel(e)) {
       console.log(e.message)
     }
@@ -27,7 +27,7 @@ axios.get('/cancel/get', {
   cancelToken: new CancelToken(c => {
     cancel = c
   })
-}).catch(function(e) {
+}).catch(function (e) {
   if (axios.isCancel(e)) {
     console.log('Request canceled')
   }

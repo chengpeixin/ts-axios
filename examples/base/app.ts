@@ -1,4 +1,4 @@
-import axios from '../../src/index'
+import axios, { AxiosError } from '../../src/index'
 
 
 // axios({
@@ -93,14 +93,14 @@ import axios from '../../src/index'
 //   }
 // })
 
-axios({
-  method: 'post',
-  url: '/base/post',
-  data: {
-    a: 1,
-    b: 2
-  }
-})
+// axios({
+//   method: 'post',
+//   url: '/base/post',
+//   data: {
+//     a: 1,
+//     b: 2
+//   }
+// })
 
 // const paramsString = 'q=URLUtils.searchParams&topic=api'
 // const searchParams = new URLSearchParams(paramsString)
@@ -111,16 +111,21 @@ axios({
 //   data: searchParams
 // })
 
-// axios({
-//   method: 'post',
-//   url: '/base/post',
-//   data: {
-//     a: 1,
-//     b: 2
-//   }
-// }).then((res) => {
-//   console.log(res)
-// })
+
+
+// const getdata = async () => {
+//   const data = await axios({
+//     method: 'post',
+//     url: '/base/post',
+//     data: {
+//       a: 1,
+//       b: 2
+//     }
+//   })
+//   console.log(data)
+// }
+
+// getdata()
 
 // axios({
 //   method: 'post',
@@ -133,3 +138,51 @@ axios({
 // }).then((res) => {
 //   console.log(res)
 // })
+
+
+// axios({
+//   method: 'get',
+//   url: '/error/get1'
+// }).then(res => {
+//   console.log(res)
+// }).catch(e => {
+//   console.log(e)
+// })
+
+
+// axios({
+//   method: 'get',
+//   url: '/error/get'
+// }).then(res => {
+//   console.log(res)
+// }).catch(e => {
+//   console.log(e)
+// })
+
+// setTimeout(function () {
+//   axios({
+//     method: 'get',
+//     url: '/error/get'
+//   }).then(res => {
+//     console.log(res)
+//   }).catch(e => {
+//     console.log(e)
+//   })
+// }, 5000)
+
+
+
+// axios({
+//   method: 'get',
+//   url: '/error/timeout',
+//   timeout: 2000
+// }).then(res => {
+//   console.log(res)
+// }).catch((e: AxiosError) => {
+//   console.log(e.message)
+//   console.log(e.config)
+//   console.log(e.code)
+//   console.log(e.request)
+//   console.log(e.response)
+// })
+
